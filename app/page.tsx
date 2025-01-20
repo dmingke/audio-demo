@@ -17,20 +17,20 @@ const cards: Card[] = [
     id: 'r1', 
     category: 'right', 
     title: '墨墨', 
-    audioSrc: '/audio/墨墨.mp3',
-    singleCardAudio: '/audio/墨墨单卡.mp3',
+    audioSrc: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8-QiQilWHDRzavGKq6iIYGoCElO8SZt9.mp3',
+    singleCardAudio: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8%E5%8D%95%E5%8D%A1-3jY6Lhkd9BWicndt8tC8FJBCfO6Pbo.MP3',
     imageSrc: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8-E3jiF5aLsR3kiXqxCAKulnVh76SkjL.jpeg',
     combinationAudios: {
-      'l2': '/audio/墨墨+魔法.MP3',
-      'l1': '/audio/墨墨+未来.MP3',
-      'b2': '/audio/墨墨+小镇.MP3',
-      'b1': '/audio/墨墨+森林.MP3'
+      'l2': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E9%AD%94%E6%B3%95-QwjodFgCTywdD4qs4CWudCpIj28zGR.MP3',
+      'l1': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E6%9C%AA%E6%9D%A5-JsIwFXfZyqR56dK90GJIvp2AxZ0Se1.MP3',
+      'b2': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E5%B0%8F%E9%95%87-eDeiqPR0pyQKVyljv9W6VzvrBCid0c.MP3',
+      'b1': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E6%A3%AE%E6%9E%97-p87U44pPc0n8KNVdLVYepPiJt1LoPT.MP3'
     },
     tripleAudios: {
-      'b1l2': '/audio/墨墨+魔法+森林.MP3',
-      'b2l2': '/audio/墨墨+小镇+魔法.MP3',
-      'b1l1': '/audio/墨墨+森林+未来.MP3',
-      'b2l1': '/audio/墨墨+未来+小镇.MP3'
+      'b1l2': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E9%AD%94%E6%B3%95+%E6%A3%AE%E6%9E%97+%E7%B3%96%E6%9E%9C-DzxtIdpnzNr56sz6ETqNJrGWcoxLEO.MP3',
+      'b2l2': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E5%B0%8F%E9%95%87+%E9%AD%94%E6%B3%95-Wvvt3ZGqKV8oxmegPeZHA5BUAdQNvw.MP3',
+      'b1l1': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E6%A3%AE%E6%9E%97+%E6%9C%AA%E6%9D%A5-Ir4D6uVj1jTF8P56OwgOef3PVc8vsA.MP3',
+      'b2l1': 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E5%A2%A8%E5%A2%A8+%E6%9C%AA%E6%9D%A5+%E5%B0%8F%E9%95%87-Ng3y67UeWJiMeLp8Gd7vHi57pWoxy1.mp3'
     }
   },
   { 
