@@ -67,10 +67,10 @@ export default function AudioPlayer({
 
     return () => {
       isSubscribed = false
-      if (audioRef.current) {
-        audioRef.current.pause()
-        audioRef.current.onended = null
-      }
+      // if (audioRef.current) {
+      //   audioRef.current.pause()
+      //   audioRef.current.onended = null
+      // }
     }
   }, [src, play, onEnded, preloadedAudio, initialTime])
   return <audio ref={audioRef} autoPlay muted src={src}/>;

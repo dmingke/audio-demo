@@ -345,7 +345,7 @@ export default function Home() {
       // Get current selected cards (excluding the category we're about to update)
       const currentSelectedCards = Object.entries(newSelections)
         .filter(([category, id]) => id !== null && category !== selectedCard.category)
-        .map(([_, id]) => id) as string[]
+        .map(([, id]) => id) as string[]
       // If we're at or over the limit, remove the oldest selection(s)
       while (currentSelectedCards.length >= modeLimit) {
         const oldestId = selectionHistory.find(id => currentSelectedCards.includes(id))
@@ -474,7 +474,7 @@ export default function Home() {
 
       return newMode
     })
-  }, [])
+  }, [playAudio, preloadedAudios])
 
   const handlePauseResume = useCallback(() => {
     setIsAudioPlaying(prev => {
