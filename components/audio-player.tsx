@@ -22,24 +22,22 @@ export default function AudioPlayer({
 
   useEffect(() => {
     let isSubscribed = true
-    let currentAudio: HTMLAudioElement | null = null
+
     const setupAudio = async () => {
       // Clean up previous audio if it exists
       if (audioRef.current) {
         audioRef.current.pause()
         audioRef.current.onended = null
-        currentAudio = audioRef.current
-
-        currentAudio.currentTime = initialTime
-        currentAudio.autoplay = true;
       }
 
       // Setup new audio source
-      // audioRef.current = preloadedAudio || new Audio(src)
+      audioRef.current = preloadedAudio || new Audio(src)
+      const currentAudio = audioRef.current
 
+      currentAudio.currentTime = initialTime
+      currentAudio.autoplay = true;
 
       try {
-        if (currentAudio) {
         if (play && isSubscribed) {  // If `play` prop is true, start playing
           currentAudio.muted = false
           await currentAudio.play()
@@ -54,7 +52,7 @@ export default function AudioPlayer({
             onEnded()
           }
         }
-      }
+
       } catch (error) {
         console.error('Audio playback error:', error)
         if (isSubscribed) {
@@ -67,13 +65,13 @@ export default function AudioPlayer({
 
     return () => {
       isSubscribed = false
-      // if (audioRef.current) {
-      //   audioRef.current.pause()
-      //   audioRef.current.onended = null
-      // }
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current.onended = null
+      }
     }
   }, [src, play, onEnded, preloadedAudio, initialTime])
-  return <audio ref={audioRef} autoPlay muted src={src}/>;
+  return <audio ref={audioRef} autoPlay muted/>;
 
 }
 
