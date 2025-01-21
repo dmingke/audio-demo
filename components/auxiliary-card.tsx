@@ -17,7 +17,13 @@ export function AuxiliaryCard({ deck, onCardSelect, selectedCard }: AuxiliaryCar
   const [clickedCard, setClickedCard] = useState<string | null>(null)
 
   const handleClick = (id: string) => {
-    setClickedCard(id)
+    // If clicking the same card, toggle it off
+    if (clickedCard === id) {
+      setClickedCard(null)
+    } else {
+      // If clicking a different card, show the new card
+      setClickedCard(id)
+    }
     onCardSelect(id)
   }
 
@@ -31,16 +37,23 @@ export function AuxiliaryCard({ deck, onCardSelect, selectedCard }: AuxiliaryCar
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       // 将 event.target 断言为 HTMLElement 类型，确保它具有 closest 方法
-      const target = event.target as HTMLElement;
-  
+      const target = event.target as HTMLElement
+
       if (clickedCard && !target.closest(".auxiliary-card-container")) {
-        setClickedCard(null);
+        setClickedCard(null)
       }
-    };
-  
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [clickedCard]);
+    }
+
+    document.addEventListener("click", handleClickOutside)
+    return () => document.removeEventListener("click", handleClickOutside)
+  }, [clickedCard])
+
+  useEffect(() => {
+    // Reset clickedCard when selectedCard changes (i.e., when selecting from a different deck)
+    if (selectedCard !== clickedCard) {
+      setClickedCard(null)
+    }
+  }, [selectedCard, clickedCard])
 
   return (
     <div className="flex flex-inline items-start gap-4 mt-2 auxiliary-card-container">
